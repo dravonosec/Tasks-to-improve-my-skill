@@ -5,12 +5,6 @@ import java.math.BigInteger;
 // https://leetcode.com/problems/smallest-integer-divisible-by-k/description/
 public class SmallestIntegerDivisiblebyK {
 
-    public static void main(String[] args) {
-        System.out.println(smallestRepunitDivByK(1));
-        System.out.println(smallestRepunitDivByK(2));
-        System.out.println(smallestRepunitDivByK(3));
-        System.out.println(smallestRepunitDivByK(7));
-    }
     public static int smallestRepunitDivByK(int k) {
         BigInteger num = BigInteger.valueOf(1);
         int length = 0;

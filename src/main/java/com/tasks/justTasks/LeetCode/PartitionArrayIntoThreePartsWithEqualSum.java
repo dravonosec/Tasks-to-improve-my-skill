@@ -18,24 +18,27 @@ public class PartitionArrayIntoThreePartsWithEqualSum {
     }
 
     public static boolean canThreePartsEqualSum(int[] arr) {
+
         int sum = 0;
         for (int i = 0; i < arr.length; i++)
             sum += arr[i];
-        System.out.println(sum);
+
         if (sum % 3 != 0 && sum != 0)
              return false;
+
         int subSum = 0;
         int sumCounter = 0;
+
         for (int i = 0; i < arr.length; i++){
             subSum += arr[i];
-            if (subSum == sum/3){
+            if (subSum == sum/3 && sumCounter < 2 && i != arr.length-1){
                 sumCounter++;
                 subSum = 0;
             }
         }
-        if (sumCounter == 3 && subSum == 0){
-            return true;
+        if (subSum == sum/3){
+            sumCounter++;
         }
-        else return false;
+        return sumCounter == 3;
     }
 }
